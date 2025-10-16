@@ -19,35 +19,131 @@ ENFORCE_PLANNED_IF_DRIFT = True         # 若实际词明显偏离计划词，�
 QUEUE_LIMIT = 120                       # 联想队列上限
 # ==========================================================
 
-# 关键词列表（保持你的原始100项）
+# 关键词列表
 keywords = [
-    "Python programming", "AI technology", "Machine learning", "Data science", "Web development",
-    "Cloud computing", "Cybersecurity", "Blockchain", "Quantum computing", "Big data",
-    "Artificial intelligence", "Deep learning", "Software engineering", "DevOps", "Mobile apps",
-    "Game development", "Network security", "Database management", "API integration", "Microservices",
-    "Computer vision", "Natural language processing", "Robotics", "IoT devices", "5G technology",
-    "Augmented reality", "Virtual reality", "Edge computing", "Serverless architecture", "Fintech",
-    "Cryptocurrency", "Digital transformation", "Agile methodology", "Selenium automation", "Bing rewards",
-    "Cloud security", "Web3", "Data analytics", "Neural networks", "Kubernetes", "Docker containers",
-    "Cybersecurity trends", "Generative AI", "Low-code platforms", "Quantum cryptography",
-    "Latest movies 2025", "Music streaming services", "Top Netflix shows", "Hollywood news",
-    "Video game releases", "Pop culture trends", "Celebrity interviews", "Anime recommendations",
-    "Streaming platforms comparison", "Oscar predictions 2025", "K-pop trends", "Virtual concerts",
-    "Football highlights", "Basketball NBA news", "Olympics 2024 updates", "Tennis rankings",
-    "Soccer World Cup", "Sports betting trends", "Fitness training tips", "Marathon training",
-    "Healthy recipes", "Sustainable living", "Minimalist lifestyle", "Travel destinations 2025",
-    "Home decor ideas", "Personal finance tips", "Mental health awareness", "Yoga benefits",
-    "Vegan diet plans", "DIY home projects", "Eco-friendly products", "Budget travel tips",
-    "Global news today", "Climate change updates", "Economic trends 2025", "International politics",
-    "Tech industry news", "Stock market analysis", "World health organization updates",
-    "Renewable energy trends", "Geopolitical events", "Space exploration news",
-    "Online learning platforms", "Free coding tutorials", "Language learning apps",
-    "STEM education trends", "Virtual classrooms", "Best universities 2025",
-    "Weather forecast", "Local events near me", "Photography tips", "Pet care advice",
-    "Gardening tips", "Electric vehicles 2025", "Smart home devices", "Fashion trends 2025",
-    "Food delivery apps", "Virtual reality gaming", "Productivity tools", "Remote work tips",
-    "Cryptocurrency prices", "Artificial intelligence ethics", "Space tourism", "Fitness trackers"
+    # Retail & Seasonal
+    "11.11 deals 2025","618 shopping festival deals","Prime Day 2025 deals",
+    "back to school laptop deals","student discounts electronics",
+    "refurbished laptops warranty","price tracking tools",
+    "compare SSD vs HDD 2025","USB-C power bank 100W","noise cancelling earbuds under $100",
+    "sustainable fashion brands","men’s capsule wardrobe 2025","winter jackets waterproof ratings",
+    "skincare routine for oily skin","sneaker resale market trends","international size guide",
+
+    # Home & Appliances
+    "energy efficient washing machines 2025","robot vacuum comparison","air purifier HEPA vs H13",
+    "smart lighting starter kit","induction cooktop buying guide","espresso machine under $500",
+    "dishwasher decibel levels","home projector short throw",
+
+    # Travel Planning
+    "visa-free countries for Chinese passport 2025","Schengen visa appointment tips",
+    "best time to visit Japan","JR Pass alternatives","travel SIM vs eSIM 2025",
+    "airport lounge access cards","travel packing checklist","travel scams to avoid",
+    "city pass comparison Europe","rainy season travel tips Southeast Asia",
+
+    # Outdoor & Camping
+    "ultralight backpacking gear list","waterproof rating explained","best tent for 4 people",
+    "hiking GPS vs offline maps","portable solar panel camping","bear canister requirements",
+
+    # News & Geopolitics
+    "central bank rate decisions 2025","semiconductor supply chain news","climate tech investments 2025",
+    "conflict analysis explained","fact-check tools list","energy storage policy updates","AI governance framework 2025",
+
+    # Education & Career
+    "SOP writing tips grad school","machine learning roadmap 2025","coding interview prep roadmap",
+    "IELTS vs TOEFL comparison 2025","scholarship statement sample","research paper reading strategies",
+    "LaTeX thesis template","citation managers comparison","Coursera vs edX vs Udemy 2025","study abroad budget planning",
+
+    # Health & Fitness
+    "high protein meal prep","intermittent fasting schedule","HIIT workouts at home",
+    "posture correction exercises","creatine monohydrate guide","smartwatch fitness accuracy",
+    "running cadence tips","sleep hygiene checklist",
+
+    # Entertainment & Media
+    "indie games hidden gems 2025","4K streaming bitrate comparison","Dolby Atmos setup guide",
+    "anime season chart 2025","film festival submissions","board games for beginners",
+    "podcast microphone under $200","game pass vs buy to own",
+
+    # Tech & Gadgets
+    "Wi-Fi 7 routers 2025","USB4 v2 explained","Bluetooth LE Audio earbuds","Matter smart home standard",
+    "foldable phones durability","LLM tools for students","RISC-V dev boards 2025","microLED vs OLED",
+    "NAS setup home 2.5GbE","cloud storage encryption",
+
+    # Cybersecurity & Privacy
+    "password manager comparison","2FA authenticator apps","phishing email examples",
+    "VPN split tunneling explained","data breach checker","privacy friendly browsers",
+
+    # Local & Everyday
+    "best cafes near me laptop-friendly","weekend markets schedule","public transport cards guide",
+    "recycling rules city","pet adoption process","home cleaning services","emergency clinics near me","phone repair same day",
+
+    # Finance & Jobs
+    "ETF dollar-cost averaging 2025","high-yield savings accounts","credit score improvement tips",
+    "salary negotiation email","resume ATS keywords CS","freelance contract template","tax residency rules expats",
+    "index funds vs active funds",
+
+    # Automotive & EV
+    "EV charging networks map","LFP vs NMC battery","used car inspection checklist",
+    "third-party vs comprehensive insurance","tire size calculator","heat pump efficiency EV",
+
+    # Photography & Imaging
+    "mirrorless cameras 2025","prime vs zoom lenses","color grading LUTs free",
+    "astrophotography settings","drone regulations 2025","RAW vs HEIF vs JPEG",
+
+    # Food & Kitchen
+    "air fryer recipes healthy","meal kit delivery comparison","specialty coffee beans guide",
+    "sous vide beginner guide","knife sharpening angles",
+
+    # Productivity & PKM
+    "second brain note taking","time blocking template","PKM tools comparison 2025",
+    "markdown editors list","read it later apps","Zettelkasten workflow",
+
+    # ---------------- 中文 ----------------
+    "2025年双十一购物优惠","618年中大促优惠","2025年Prime会员日优惠","开学季笔记本优惠",
+    "学生电子产品优惠","官翻笔记本保修政策","价格跟踪工具","2025年SSD与HDD对比",
+    "100W USB-C 移动电源","百美元内降噪耳机","可持续时尚品牌","2025男士胶囊衣橱",
+    "冬季外套防水等级","油皮护肤步骤","球鞋转售市场趋势","国际尺码对照表",
+
+    "2025节能洗衣机","扫地机器人对比","空气净化器HEPA与H13","智能照明入门套装",
+    "电磁炉选购指南","500美元以下咖啡机","洗碗机噪音分贝对比","家用短焦投影仪",
+
+    "2025中国护照免签国家","申根签证预约技巧","日本最佳旅行季节","日本通票替代方案",
+    "2025旅游实体卡与eSIM对比","机场贵宾厅信用卡攻略","旅行打包清单","旅行常见骗局",
+    "欧洲城市通票对比","东南亚雨季出行建议",
+
+    "超轻徒步装备清单","防水等级IPX说明","四人帐篷推荐","徒步GPS与离线地图对比","露营便携太阳能板","防熊罐使用要求",
+
+    "2025央行利率决议","半导体供应链新闻","2025气候科技投资","国际冲突解析",
+    "事实核查工具清单","储能政策动态","2025人工智能治理框架",
+
+    "研究生申请SOP写作要点","2025机器学习学习路线","编程面试准备路线图","2025雅思与托福对比","奖学金申请陈述范文",
+    "论文精读方法","LaTeX论文模板","文献管理工具对比","2025在线课程平台对比","留学预算规划",
+
+    "高蛋白备餐","间歇性断食时间表","家庭HIIT训练","体态矫正训练","肌酸一水补剂指南",
+    "智能手表运动数据准确性","跑步步频技巧","睡眠卫生清单",
+
+    "2025独立游戏冷门佳作","4K流媒体码率对比","杜比全景声设置指南","2025动画新番导览",
+    "电影节投稿指南","桌游入门推荐","200美元内播客麦克风","订阅制与买断制对比",
+
+    "2025年Wi-Fi 7路由器","USB4 v2 技术解析","低功耗蓝牙音频耳机","Matter智能家居标准","折叠屏手机耐用性",
+    "学生用大语言模型工具","2025年RISC-V开发板","MicroLED与OLED对比","家用NAS与2.5G网卡配置","云存储加密方案",
+
+    "密码管理器对比","双重验证应用推荐","钓鱼邮件示例","VPN分流原理解析","数据泄露查询工具","注重隐私的浏览器",
+
+    "附近适合办公的咖啡馆","周末市集时间表","公共交通卡使用指南","城市垃圾分类规则","宠物领养流程","家政保洁服务",
+    "附近急诊诊所","当日手机维修",
+
+    "2025ETF定投","高收益储蓄账户","信用分提升技巧","薪资谈判邮件模板","计算机专业简历ATS关键词",
+    "自由职业合同模板","海外税务居民规则","指数基金与主动基金对比",
+
+    "电动车充电网络地图","LFP与NMC电池对比","二手车检查清单","交强险与商业全险对比","轮胎尺寸计算器","电车热泵效率",
+
+    "2025无反相机推荐","定焦与变焦镜头对比","免费调色LUT资源","星野摄影参数设置","2025无人机法规","RAW/HEIF/JPEG对比",
+
+    "空气炸锅健康食谱","生鲜配餐对比","精品咖啡豆选购指南","低温慢煮入门指南","厨刀开刃角度",
+
+    "第二大脑笔记法","时间块模板","2025知识管理工具对比","Markdown编辑器清单","稍后读应用","卡片盒笔记工作流",
 ]
+
 
 # --- 手机模拟核心设置 ---
 options = webdriver.EdgeOptions()
