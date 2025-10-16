@@ -141,5 +141,3 @@ python Mobilephone.py
 * 选择器/兼容性：移动与桌面 SERP 若有结构变化，欢迎补充多套选择器兜底。
 * 文档：欢迎补充中文/英文说明。
 
-
-generated release notes"
