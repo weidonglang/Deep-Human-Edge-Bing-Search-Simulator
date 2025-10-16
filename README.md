@@ -29,6 +29,7 @@
 * **Edge WebDriver（msedgedriver）与浏览器版本匹配**
   Edge 官方要求 **主版本三段号**需与浏览器匹配（例如 `121.x.y.z` ↔ `121.x.y.z`），否则驱动会报错。检查浏览器版本：地址栏输入 `edge://settings/help`；再去 WebDriver 页面下载对应版本。([Microsoft Learn][3])
 https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver?form=MA13LH
+代码中驱动路径为：service = Service(r"E:\WebDriver\msedgedriver.exe") 
 > 如果你不想手动管理驱动，也可以改用 `webdriver-manager` 自动下载（本仓库当前脚本使用**手动路径**方式）。
 
 ---
