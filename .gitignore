@@ -1,0 +1,13 @@
+# Python / build
+__pycache__/
+*.py[cod]
+*.log
+dist/
+build/
+*.spec
+*.exe
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
