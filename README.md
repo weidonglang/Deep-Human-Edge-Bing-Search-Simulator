@@ -43,7 +43,7 @@ pip install -U selenium
 # （可选）如果改成自动下载驱动：
 pip install -U webdriver-manager
 ```
-> 也可以直接运行两个程序
+*也可以直接运行两个程序*
 > Selenium 官方文档展示了用 `get_attribute("value")` 读取输入框值的方式，我们在脚本中据此实现“真实检索对齐”。([Selenium][1])
 
 ---
