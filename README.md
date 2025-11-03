@@ -8,7 +8,7 @@
 ## ✨ Features / 功能
 
 * **Real query alignment / 真实检索对齐**
-  从结果页读取搜索框 `value`（失败则回退解析 URL 的 `?q=`）作为“实际搜索词”，日志与去重使用该值，彻底消除“日志 A、实际搜 B”。参考：Selenium 获取输入值 `get_attribute("value")` 用法与示例。([Selenium][1])
+  从结果页读取搜索框 `value`（失败则回退解析 URL 的 `?q=`）作为“实际搜索词”，日志与去重使用该值，彻底消除“日志 A、实际搜 B”。
 * **Controlled autocomplete / 受控自动补全**
   仅当前缀 ≥3 且候选“以此前缀开头/包含此前缀”时才点击；否则直接回车。
 * **Multi-hop related queue / 多跳联想队列**
@@ -44,7 +44,7 @@ pip install -U selenium
 pip install -U webdriver-manager
 ```
 *也可以直接运行两个程序*
-> Selenium 官方文档展示了用 `get_attribute("value")` 读取输入框值的方式，我们在脚本中据此实现“真实检索对齐”。([Selenium][1])
+> Selenium 官方文档展示了用 `get_attribute("value")` 读取输入框值的方式，我们在脚本中据此实现“真实检索对齐”。
 
 ---
 
