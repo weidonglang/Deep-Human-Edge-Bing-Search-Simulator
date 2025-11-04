@@ -19,7 +19,7 @@
 * **PC & Mobile 两套脚本**
 
   * `PC.py`：桌面端选择器与节奏（点击主结果后自动返回继续抽取联想）。
-  * `Mobilephone.py`：开启移动仿真（UA + deviceMetrics），触控点击与更平滑滚动。关于 Edge/Chromium 的设备模拟与 DevTools 设备模式可参见官方说明。([Microsoft Learn][2])
+  * `Mobilephone.py`：开启移动仿真（UA + deviceMetrics），触控点击与更平滑滚动。关于 Edge/Chromium 的设备模拟与 DevTools 设备模式可参见官方说明。
 
 ---
 
@@ -68,12 +68,7 @@ pip install -U webdriver-manager
 * `MIN_PREFIX_FOR_AUTOCOMPLETE = 3`：前缀不足 3 个字符不点联想。
 * `ENFORCE_PLANNED_IF_DRIFT = True`：若跑题则强制回到计划词检索。
 * `QUEUE_LIMIT = 120`：联想队列上限。
-
-> Edge WebDriver 的 capability/EdgeOptions 配置项与启动方式见官方文档。([Microsoft Learn][4])
-> DevTools 的移动设备模拟（UA、视口、节流等）介绍可参考官方说明。([Microsoft Learn][2])
-
 ---
-
 ## ▶️ Run / 运行
 
 ```bash
@@ -88,31 +83,23 @@ python Mobilephone.py
 
 ---
 
-## 🧠 How it works / 工作原理（简述）
+## 🧠 How it works / 工作原理
 
 1. **预热**：访问 1–2 个“噪音站点”。
 2. **逐字输入计划词**（直接对输入框 `send_keys`，而非队列式 `ActionChains`），必要时点击**受控联想**，否则回车。
-3. **结果页就绪**后读取**实际搜索词**：优先 `input#get_attribute("value")`，若失败解析当前 URL 的 `?q=`。([Selenium][1])
+3. **结果页就绪**后读取**实际搜索词**：优先 `input#get_attribute("value")`，若失败解析当前 URL 的 `?q=`。
 4. **跑题纠偏**：若与计划词偏差大，使用 `?q=<planned>` 重新发起搜索。
 5. **抽取联想**：收集“相关搜索 + PAA”，去重后入队，驱动下一轮搜索。
 6. **人类化交互**：轻度滚动/回拉、短暂停顿、偶尔点开主结果后返回。
 
 ---
 
-## 🧪 Quick verify / 快速自检
-
-* Edge 与 msedgedriver 版本是否匹配（前三段号需一致）？([Microsoft Learn][3])
-* 你的 `user_data_path` 和驱动路径是否为**真实存在**的本地绝对路径？
-* 首轮搜索后，日志中应能看到 **“实际搜索词”** 与 **“计划词”** 的对齐提示。
-
----
-
 ## 📦 Releases & Changelog / 版本与更新记录
 
-* 发布版本建议使用 **注解标签**（annotated tag），并在 GitHub 的 **Releases** 页面启用**自动生成发布说明**（Generate release notes）。([GitHub Docs][5])
+* 发布版本建议使用 **注解标签**（annotated tag），并在 GitHub 的 **Releases** 页面启用**自动生成发布说明**（Generate release notes）。
 * 版本号使用 **Semantic Versioning（语义化版本）**。例如：
 
-  * `MAJOR`（不兼容变更）、`MINOR`（兼容新增）、`PATCH`（兼容修复）。([Semantic Versioning][6])
+  * `MAJOR`（不兼容变更）、`MINOR`（兼容新增）、`PATCH`（兼容修复）。
 
 ---
 
@@ -120,26 +107,6 @@ python Mobilephone.py
 
 * 请遵守所访问网站与搜索引擎的**服务条款**与**速率限制**，不要用于刷量或干扰性操作。
 * 仅用于**学习与研究**；请对目标站点保持礼貌访问频率。
-* WebDriver/Edge 的安装与使用以官方文档为准（确保驱动与浏览器版本匹配）。([Microsoft Learn][3])
+* WebDriver/Edge 的安装与使用以官方文档为准（确保驱动与浏览器版本匹配）。
 
----
-
-## 🙋 FAQ
-
-* **驱动报错/版本不一致怎么办？**
-  进入 `edge://settings/help` 查看版本号，再到 Edge WebDriver 页面下载**相同主版本**的驱动即可。([Microsoft Learn][3])
-* **为什么要用 `get_attribute("value")` 读实际搜索词？**
-  这是 Selenium 常用、可靠的方式获取输入框当前内容；若 DOM 行为特殊，再回退解析 URL 的 `?q=`。([Selenium][1])
-* **移动端脚本是“真手机”吗？**
-  它使用 Chromium/Edge 的**设备模拟**（UA + 视口等），方便在桌面环境模拟移动页面渲染与选择器差异。([Chrome for Developers][7])
-
----
-
-## 🤝 Contributing / 参与
-
-欢迎 PR/Issue：
-
-* Bug 修复：请附**最小复现**与运行环境。
-* 选择器/兼容性：移动与桌面 SERP 若有结构变化，欢迎补充多套选择器兜底。
-* 文档：欢迎补充中文/英文说明。
 
