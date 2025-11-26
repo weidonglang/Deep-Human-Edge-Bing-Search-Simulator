@@ -1,6 +1,6 @@
 # Deep-Human-Edge-Bing-Search-Simulator
 
-**中文（Chinese）**：基于 **Selenium + Microsoft Edge** 的“类人”搜索脚本（PC 端与移动端各一份）。实现“真实检索对齐”“受控自动补全”“多源联想队列（相关搜索/PAA）”“跑题纠偏”“自然滚动与短暂停顿”等。
+**中文（Chinese）**：基于 **Selenium + Microsoft Edge** 的“类人”搜索脚本。实现“真实检索对齐”“受控自动补全”“多源联想队列（相关搜索/PAA）”“跑题纠偏”“自然滚动与短暂停顿”等。
 ----
 **English**: Human-like Bing search automation (PC & Mobile) built on **Selenium + Microsoft Edge**. It aligns logs with the **actual query**, uses **controlled autocomplete**, builds a **multi-hop related-terms queue (Related + PAA)**, performs **drift correction**, and simulates gentle scrolling/pauses.
 ----
