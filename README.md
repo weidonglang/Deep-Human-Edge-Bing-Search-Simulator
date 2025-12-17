@@ -62,7 +62,7 @@ pip install -U webdriver-manager
   * `user_data_path = "E:\\MyEdgeProfile_Mobile"` → 替换为移动脚本使用的独立 Profile 目录。
   * `Service(r"E:\WebDriver\msedgedriver.exe")` → 同上。
 
-**可调开关（两份脚本一致）**：
+**可调开关**：
 
 * `STRICT_AUTOCOMPLETE = True`：只点击“与前缀相关”的下拉联想。
 * `MIN_PREFIX_FOR_AUTOCOMPLETE = 3`：前缀不足 3 个字符不点联想。
